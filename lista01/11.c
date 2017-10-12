@@ -2,39 +2,21 @@
 
 int main() {
 
-	int valor, op, aux=1, i, j, x=0 ;
-	int bin[50];
-	
-	/*limpar vetor*/
-	for(i=0; i<50; i++) {
-		bin[i] = 5;
-	}
+	int valor, op, aux=1, i=1, j, x=0 ;
 	
 	scanf("%d %d", &valor, &op);
 	
 	if (op == 1) {
 		
-		for (i=0; valor>0; i++) {
-			
-			if (valor%2 == 0) {
-				bin[i] = 0;
-			}
-			
-			else {
-				bin[i] = 1;
-			}
-			
-			valor/=2;
+		while (valor!=0) {
+		
+			x += (valor%2) *i;
+			i *= 10;
+			valor /=2;		
+		
 		}
 		
-		for (i=49; i>=0; i--) {
-		
-			if (bin[i] != 5) {
-				printf("%d", bin[i]);
-			}
-		}
-		
-		printf("\n");
+		printf("%d\n", x);
 
 	}
 		
